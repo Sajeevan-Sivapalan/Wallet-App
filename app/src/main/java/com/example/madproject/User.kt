@@ -34,4 +34,10 @@ class User : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
+    fun openSearchUser(view: View) {
+        val intent = Intent(this, SearchAccessDetails::class.java)
+        startActivity(intent)
+        finish()
+    }
 }

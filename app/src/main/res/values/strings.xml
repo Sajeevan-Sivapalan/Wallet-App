@@ -25,4 +25,7 @@
     <string name="update">Update</string>
     <string name="register">Register</string>
     <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="ees">Enter username to search user</string>
+    <string name="bth">Back to home</string>
 </resources>
