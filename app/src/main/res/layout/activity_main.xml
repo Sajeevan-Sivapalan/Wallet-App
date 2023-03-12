@@ -85,7 +85,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="71dp"
         android:text="don't do you have any account"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
