@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/btnAddAccess"
-        android:layout_width="121dp"
-        android:layout_height="52dp"
+        android:layout_width="@dimen/submit_btn_width"
+        android:layout_height="@dimen/submit_btn_height"
         android:layout_marginStart="156dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="152dp"

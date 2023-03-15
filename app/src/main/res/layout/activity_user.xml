@@ -7,8 +7,8 @@
     tools:context=".User">
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="306dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/submenu_btn_width"
+        android:layout_height="@dimen/submenu_btn_height"
         android:layout_marginStart="53dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="53dp"
@@ -24,8 +24,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="306dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/submenu_btn_width"
+        android:layout_height="@dimen/submenu_btn_height"
         android:layout_marginStart="53dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="53dp"
@@ -41,8 +41,8 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="306dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/submenu_btn_width"
+        android:layout_height="@dimen/submenu_btn_height"
         android:layout_marginStart="52dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="53dp"
@@ -58,8 +58,8 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="306dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/submenu_btn_width"
+        android:layout_height="@dimen/submenu_btn_height"
         android:layout_marginStart="52dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="53dp"
@@ -75,8 +75,8 @@
 
     <Button
         android:id="@+id/btnAddAccess"
-        android:layout_width="306dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/submenu_btn_width"
+        android:layout_height="@dimen/submenu_btn_height"
         android:layout_marginStart="52dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="53dp"
@@ -92,8 +92,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="306dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/submenu_btn_width"
+        android:layout_height="@dimen/submenu_btn_height"
         android:layout_marginStart="53dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="53dp"

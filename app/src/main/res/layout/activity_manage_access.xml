@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="255dp"
-        android:layout_height="57dp"
+        android:layout_width="@dimen/btm_btn_width"
+        android:layout_height="@dimen/btm_btn_height"
         android:layout_marginTop="24dp"
         android:background="@color/blue"
         android:onClick="backToUser"
