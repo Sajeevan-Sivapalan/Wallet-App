@@ -70,7 +70,7 @@
         android:onClick="openViewUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewUserName"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -102,6 +102,7 @@
         android:text="@string/logout"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:onClick="logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +110,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtViewUserName"
         android:layout_width="376dp"
         android:layout_height="78dp"
         android:layout_marginStart="16dp"

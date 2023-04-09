@@ -20,6 +20,7 @@ class UpdateUser : AppCompatActivity() {
     lateinit var edtUpdPassword2:EditText
     lateinit var txtUserName: TextView
     lateinit var databaseRef: DatabaseReference
+    var userName = ""
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,7 @@ class UpdateUser : AppCompatActivity() {
         edtUpdPassword = findViewById(R.id.edtUpdPassword)
         edtUpdPassword2 = findViewById(R.id.edtUpdPassword2)
 
-        val userName = "hello"
+        userName = intent.getStringExtra("userName").toString()
 
         databaseRef = FirebaseDatabase.getInstance().getReference("Users")
         databaseRef.child(userName).get().addOnSuccessListener {
@@ -100,6 +101,7 @@ class UpdateUser : AppCompatActivity() {
             val user1 = mapOf<String, String>("userName" to txtUserName.text.toString(), "name" to edtUpdName.text.toString(), "password" to edtUpdPassword.text.toString(),)
             databaseRef.child(txtUserName.text.toString()).updateChildren(user1).addOnSuccessListener {
                 val intent = Intent(this, User::class.java)
+                intent.putExtra("userName", userName)
                 startActivity(intent)
                 Toast.makeText(this, "Successfully updated", Toast.LENGTH_SHORT).show()
                 finish()
@@ -109,6 +111,7 @@ class UpdateUser : AppCompatActivity() {
 
     fun backToUser(view: View) {
         val intent = Intent(this, User::class.java)
+        intent.putExtra("userName", userName)
         startActivity(intent)
         finish()
     }

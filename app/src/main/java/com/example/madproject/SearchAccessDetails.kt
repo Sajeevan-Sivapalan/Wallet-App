@@ -10,11 +10,14 @@ import com.example.madproject.models.UserData
 
 class SearchAccessDetails : AppCompatActivity() {
     lateinit var edtSrhUserName: EditText
+    var userName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_access_details)
         edtSrhUserName = findViewById(R.id.edtSrhUserName)
+
+        userName = intent.getStringExtra("userName").toString()
     }
 
     fun SearchUser(view: View) {
@@ -44,6 +47,7 @@ class SearchAccessDetails : AppCompatActivity() {
 
     fun backToHome(view: View) {
         val intent = Intent(this, User::class.java)
+        intent.putExtra("userName", userName)
         startActivity(intent)
         finish()
     }

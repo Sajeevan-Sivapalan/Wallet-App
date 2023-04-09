@@ -16,6 +16,8 @@ class ViewUser : AppCompatActivity() {
     lateinit var txtUserName: TextView
     lateinit var txtName: TextView
     lateinit var txtPassword: TextView
+    var userName = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_user)
@@ -23,8 +25,7 @@ class ViewUser : AppCompatActivity() {
         txtUserName = findViewById(R.id.txtUserName)
         txtName = findViewById(R.id.txtName)
         txtPassword = findViewById(R.id.txtPassword)
-
-        val userName = "hello"
+        userName = intent.getStringExtra("userName").toString()
 
         databaseRef = FirebaseDatabase.getInstance().getReference("Users")
         databaseRef.child(userName).get().addOnSuccessListener {
@@ -43,6 +44,7 @@ class ViewUser : AppCompatActivity() {
 
     fun backToUser(view: View) {
         val intent = Intent(this, User::class.java)
+        intent.putExtra("userName", userName)
         startActivity(intent)
         finish()
     }

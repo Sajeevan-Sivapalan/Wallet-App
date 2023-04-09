@@ -13,12 +13,15 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AddAdminAccess : AppCompatActivity() {
     lateinit var edtAccUserName:EditText
+    var userName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_admin_access)
 
         edtAccUserName = findViewById(R.id.edtAccUserName)
+
+        userName = intent.getStringExtra("userName").toString()
     }
 
     fun AddAccess(view: View) {
@@ -40,6 +43,7 @@ class AddAdminAccess : AppCompatActivity() {
         }
         if(count == 1) {
             val intent = Intent(this, User::class.java)
+            intent.putExtra("userName", userName)
             startActivity(intent)
             finish()
         }
@@ -47,6 +51,7 @@ class AddAdminAccess : AppCompatActivity() {
 
     fun backToUser(view: View) {
         val intent = Intent(this, User::class.java)
+        intent.putExtra("userName", userName)
         startActivity(intent)
         finish()
     }
