@@ -65,7 +65,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/txtUserName1"
         android:layout_width="204dp"
         android:layout_height="29dp"
         android:layout_marginStart="152dp"
@@ -147,6 +147,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUserName1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

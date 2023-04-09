@@ -6,14 +6,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import com.example.madproject.Validations.ValidationResult
 import com.example.madproject.models.UserData
+import com.example.madproject.models.UserModel
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class RegisterUser : AppCompatActivity() {
     lateinit var edtRegUserName:EditText
     lateinit var edtRegPassword:EditText
     lateinit var edtRegName:EditText
     lateinit var edtRegPassword2:EditText
+    lateinit var databaseRef:DatabaseReference
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +36,7 @@ class RegisterUser : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    @SuppressLint("NotConstructor")
     fun RegisterUser(view: View) {
         var count = 0
 
@@ -101,10 +107,27 @@ class RegisterUser : AppCompatActivity() {
         }
 
         if(count == 4) {
-            var intent = Intent(this, Login::class.java)
-            startActivity(intent)
-            finish()
+            databaseRef = FirebaseDatabase.getInstance().getReference("Users")
+            databaseRef.child(edtRegUserName.text.toString()).get().addOnSuccessListener {
+                if (it.exists()) {
+                    var intent = Intent(this, Login::class.java)
+                    startActivity(intent)
+                    Toast.makeText(this, "Account already available", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                else {
+                    val user1 = UserModel(edtRegUserName.text.toString(), edtRegName.text.toString(), edtRegPassword.text.toString() )
+                    databaseRef.child(edtRegUserName.text.toString()).setValue(user1)
+                        .addOnSuccessListener {
+                            var intent = Intent(this, Login::class.java)
+                            startActivity(intent)
+                            Toast.makeText(this, "Successfully created", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }
+                }
+            }.addOnFailureListener {e ->
+                Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-
 }

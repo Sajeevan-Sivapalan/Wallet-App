@@ -7,11 +7,11 @@ import android.view.View
 import android.widget.EditText
 import com.example.madproject.Validations.ValidationResult
 import com.example.madproject.models.UserData
+import com.google.firebase.auth.FirebaseAuthException
 
 class Login : AppCompatActivity() {
     lateinit var edtUserName:EditText
     lateinit var edtPassword:EditText
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
