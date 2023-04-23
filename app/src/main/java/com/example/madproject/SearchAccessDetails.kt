@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import com.example.madproject.Validations.ValidationResult
 import com.example.madproject.models.UserData
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class SearchAccessDetails : AppCompatActivity() {
     lateinit var edtSrhUserName: EditText
     var userName = ""
+    lateinit var databaseRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +43,28 @@ class SearchAccessDetails : AppCompatActivity() {
         }
 
         if(count == 1) {
-            val intent = Intent(this, User::class.java)
-            startActivity(intent)
-            finish()
+            databaseRef = FirebaseDatabase.getInstance().getReference("UserAccess")
+            databaseRef.child(userName).get().addOnSuccessListener {
+                val searchUserName = edtSrhUserName.text.toString()
+                if(it.exists()){
+                    val access1 = it.child("access1").value
+                    val access2 = it.child("access2").value
+                    val access3 = it.child("access3").value
+
+                    if((access1.toString() == searchUserName) || (access2.toString() == searchUserName) || (access3.toString() == searchUserName)){
+                        Toast.makeText(this, "have access", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        Toast.makeText(this, "Do not have access to view", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+                else {
+                    Toast.makeText(this, "Do not have access to view", Toast.LENGTH_SHORT).show()
+                }
+            }.addOnFailureListener {e ->
+                Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
