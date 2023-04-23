@@ -10,48 +10,98 @@
         android:id="@+id/button2"
         android:layout_width="@dimen/btm_btn_width"
         android:layout_height="@dimen/btm_btn_height"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="59dp"
         android:background="@color/blue"
         android:onClick="backToUser"
         android:text="@string/btu"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/txtAcc3"
         tools:ignore="MissingConstraints" />
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="355dp"
-        android:layout_height="249dp"
-        android:layout_margin="30dp"
-        android:layout_marginTop="32dp"
-        android:stretchColumns="1"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/txtAcc1"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="75dp"
+        android:padding="10dip"
+        android:text="Access1"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelAcc1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14">
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-        <TableRow>
+    <Button
+        android:id="@+id/btnDelAcc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="44dp"
+        android:background="@color/red"
+        android:text="@string/delete"
+        android:onClick="deleteAcc1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="example1@gmail.com"
-                android:textSize="20dp" />
+    <TextView
+        android:id="@+id/txtAcc2"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="32dp"
+        android:padding="10dip"
+        android:text="Access2"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelAcc2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAcc1" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/red"
-                android:text="@string/delete"
-                android:textColor="@color/white" />
-        </TableRow>
+    <Button
+        android:id="@+id/btnDelAcc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="44dp"
+        android:background="@color/red"
+        android:onClick="deleteAcc2"
+        android:text="@string/delete"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDelAcc1" />
 
+    <TextView
+        android:id="@+id/txtAcc3"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="28dp"
+        android:padding="10dip"
+        android:text="Access3"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelAcc3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAcc2" />
 
-    </TableLayout>
+    <Button
+        android:id="@+id/btnDelAcc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="44dp"
+        android:background="@color/red"
+        android:onClick="deleteAcc3"
+        android:text="@string/delete"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDelAcc2" />
 
     <TextView
         android:id="@+id/textView14"

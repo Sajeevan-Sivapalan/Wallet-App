@@ -97,7 +97,6 @@ class UpdateUser : AppCompatActivity() {
 
         if(count == 3){
             databaseRef = FirebaseDatabase.getInstance().getReference("Users")
-            //val user1 = UserModel(txtUserName.text.toString(), edtUpdName.text.toString(), edtUpdPassword.text.toString())
             val user1 = mapOf<String, String>("userName" to txtUserName.text.toString(), "name" to edtUpdName.text.toString(), "password" to edtUpdPassword.text.toString(),)
             databaseRef.child(txtUserName.text.toString()).updateChildren(user1).addOnSuccessListener {
                 val intent = Intent(this, User::class.java)

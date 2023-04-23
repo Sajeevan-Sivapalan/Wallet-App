@@ -82,18 +82,6 @@ class RegisterUser : AppCompatActivity() {
             }
         }
 
-        when(nameValidation) {
-            is ValidationResult.Valid -> {
-                count++
-            }
-            is ValidationResult.Empty -> {
-                edtRegName.error = nameValidation.errorMessage
-            }
-            is ValidationResult.Invalid -> {
-                edtRegPassword.error = nameValidation.errorMessage
-            }
-        }
-
         when(rePasswordValidation) {
             is ValidationResult.Valid -> {
                 count++
@@ -117,8 +105,7 @@ class RegisterUser : AppCompatActivity() {
                 }
                 else {
                     val user1 = UserModel(edtRegUserName.text.toString(), edtRegName.text.toString(), edtRegPassword.text.toString() )
-                    databaseRef.child(edtRegUserName.text.toString()).setValue(user1)
-                        .addOnSuccessListener {
+                    databaseRef.child(edtRegUserName.text.toString()).setValue(user1).addOnSuccessListener {
                             var intent = Intent(this, Login::class.java)
                             startActivity(intent)
                             Toast.makeText(this, "Successfully created", Toast.LENGTH_SHORT).show()
