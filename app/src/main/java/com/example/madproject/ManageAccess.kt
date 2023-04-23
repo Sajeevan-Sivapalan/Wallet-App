@@ -45,11 +45,11 @@ class ManageAccess : AppCompatActivity() {
                 txtAcc3.text = access3.toString()
 
                 if(txtAcc1.text == "")
-                    btnDelAcc1.isClickable = false
+                    btnDelAcc1.visibility  = View.INVISIBLE
                 if(txtAcc2.text == "")
-                    btnDelAcc2.isClickable = false
+                    btnDelAcc2.visibility = View.INVISIBLE
                 if(txtAcc3.text == "")
-                    btnDelAcc3.isClickable = false
+                    btnDelAcc3.visibility = View.INVISIBLE
 
             }
         }.addOnFailureListener {e ->
