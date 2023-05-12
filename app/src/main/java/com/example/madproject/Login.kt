@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
+//login class
 class Login : AppCompatActivity() {
     lateinit var edtUserName:EditText
     lateinit var edtPassword:EditText
@@ -52,6 +53,7 @@ class Login : AppCompatActivity() {
             }
             is ValidationResult.Empty -> {
                 edtUserName.error = userNameValidation.errorMessage
+                edtUserName.hint = "User Name can not be empty"
             }
         }
 
@@ -65,6 +67,7 @@ class Login : AppCompatActivity() {
             }
             is ValidationResult.Empty -> {
                 edtPassword.error = passwordValidation.errorMessage
+                edtPassword.hint = "password can not be empty"
             }
         }
 
@@ -73,10 +76,18 @@ class Login : AppCompatActivity() {
             databaseRef = FirebaseDatabase.getInstance().getReference("Users")
             databaseRef.child(edtUserName.text.toString()).get().addOnSuccessListener {
                 if(it.exists()){
-                    val intent = Intent(this, MainHomePage::class.java)
-                    intent.putExtra("userName", edtUserName.text.toString())
-                    startActivity(intent)
-                    finish()
+
+                    val password = it.child("password").value
+
+                    if(password == edtPassword.text.toString()) {
+                        val intent = Intent(this, MainHomePage::class.java)
+                        intent.putExtra("userName", edtUserName.text.toString())
+                        startActivity(intent)
+                        finish()
+                    }
+                    else {
+                        Toast.makeText(this, "Invalid user name or password", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 else {
                     Toast.makeText(this, "Invalid user name or password", Toast.LENGTH_SHORT).show()

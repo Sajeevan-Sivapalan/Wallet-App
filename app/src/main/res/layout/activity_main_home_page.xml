@@ -29,22 +29,22 @@
         android:layout_marginTop="78dp"
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="16dp"
-        android:onClick="redirectUser"
+        android:onClick="cashpage"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toEndOf="@+id/mainBank"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         app:srcCompat="@drawable/cash" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/mainBank"
         android:layout_width="134dp"
         android:layout_height="98dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="297dp"
         android:layout_marginBottom="16dp"
-        android:onClick="redirectUser"
+        android:onClick="bankPage"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
@@ -58,7 +58,7 @@
         android:layout_marginTop="121dp"
         android:layout_marginEnd="139dp"
         android:layout_marginBottom="16dp"
-        android:onClick="redirectUser"
+        android:onClick="investmentpage"
         app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +122,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView10"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        app:layout_constraintTop_toBottomOf="@+id/mainBank" />
 
     <TextView
         android:id="@+id/textView10"
